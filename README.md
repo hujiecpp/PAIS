@@ -36,12 +36,12 @@ Code release for paper "Pseudo-label Alignment for Semi-supervised Instance Segm
 # JOB_TYPE: 'baseline' or 'semi', decide which kind of job to run
 # PERCENT_LABELED_DATA: 1, 5, 10. The ratio of labeled coco data in whole training dataset.
 # GPU_NUM: number of gpus to run the job
-bash tools/dist_train_partially_weight.sh <JOB_TYPE> ${FOLD} <PERCENT_LABELED_DATA> <GPU_NUM>
+bash tools/dist_train_partially_weight.sh <JOB_TYPE>  <PERCENT_LABELED_DATA> <GPU_NUM>
 ```
 For example, we could run the following scripts to train our model on 10% labeled data with 4 GPUs:
 
 ```shell script
-bash tools/dist_train_partially_weight.sh semi ${FOLD} 10 4
+bash tools/dist_train_partially_weight.sh semi 10 4
 ```
 
 ### Evaluation
