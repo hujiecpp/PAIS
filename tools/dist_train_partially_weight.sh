@@ -16,6 +16,6 @@ if [[ ${TYPE} == 'baseline' ]]; then
         --cfg-options fold=${FOLD} percent=${PERCENT} ${@:5}
 else
     CUDA_VISIBLE_DEVICES=0,1,2,3 nohup python -m torch.distributed.launch --nproc_per_node=$GPUS --master_port=$PORT \
-        $(dirname "$0")/train.py configs/ssl_knet/ssl_knet_weight_lm.py --launcher pytorch \
-        --cfg-options fold=${FOLD} percent=${PERCENT} ${@:5} >> out/ssl_knet_weight_lm.out &
+        $(dirname "$0")/train.py configs/ssl_knet/ssl_knet_weight.py --launcher pytorch \
+        --cfg-options fold=${FOLD} percent=${PERCENT} ${@:5} >> out/ssl_knet_weight.out &
 fi
